@@ -55,20 +55,22 @@
                   <button class="btn btn-lg btn-warning">Go!</button>
               </div>
           </div>
-          <div>
-              Location
-          </div>
-          <div >
-              {{address}}
-          </div> 
-          <div>
-              Building Code Properties: {{zone}}
-          </div>
-          <div ng-repeat="prop in zoneProperties | filter:zone" ng-if="searched">
-              <div ng-repeat="(propName, propValue) in prop">
-                  {{propName}}: {{propValue}} <br />
+          <div class="resultsdiv">
+              <div>
+                  Location
               </div>
-</div> 
+              <div >
+                  {{address}}
+              </div>
+              <div>
+                  Building Code Properties: {{zone}}
+              </div>
+              <div ng-repeat="prop in zoneProperties | filter:zone" ng-if="searched">
+                  <div ng-repeat="(propName, propValue) in prop">
+                      {{propName}}: {{propValue}} <br />
+                  </div>
+              </div>
+          </div>
       </div>
     </div>
   </div>
