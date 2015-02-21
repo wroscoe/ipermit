@@ -53,6 +53,14 @@
     </div>
   </div>
 
+<div>
+Zone Properties
+</div>
+
+<div ng-repeat="prop in zoneProperties | filter:'RM-4'" ng-if="searched">
+{{prop['Permitted Density']}} <br />
+</div> 
+
   <!-- build:js scripts/components.min.js -->
   <!-- bower:js -->
   <script src="bower_components/jquery/dist/jquery.js"></script>
