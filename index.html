@@ -5,8 +5,8 @@
 
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <title>IPermit - Yet another amazing AngularJS app</title>
-  <meta name="description" content="Yet another amazing AngularJS app">
+  <title>IPermit - Find Building Code Relating to Your Property</title>
+  <meta name="description" content="Find Building Code Relating to Your Property">
 
 <!--[if lt IE 9]>
   <script src="//cdnjs.cloudflare.com/ajax/libs/es5-shim/2.2.0/es5-shim.min.js"></script>
@@ -24,12 +24,11 @@
   <!-- Properties for Google+ snippets -->
   <meta property="og:title" content="iPermit">
   <meta property="og:description" content="Demo: Find Building Regulations by Address">
-  <meta property="og:image" content="https://github.global.ssl.fastly.net/images/modules/logos_page/Octocat.png">
 
   <!-- Author of this application -->
   <link rel="author" href="https://github.com/aih"> 
-  <link rel="icon" href="http://angularjs.org/favicon.ico" type="image/x-icon">
-  <link rel="shortcut icon" href="http://angularjs.org/favicon.ico" type="image/x-icon">
+  <!--link rel="icon" href="http://angularjs.org/favicon.ico" type="image/x-icon"-->
+  <!--link rel="shortcut icon" href="http://angularjs.org/favicon.ico" type="image/x-icon"-->
 
   <!-- build:css styles/components.min.css -->
   <!-- bower:css -->
@@ -45,38 +44,34 @@
 
 <body ontouchstart ng-controller="MainCtrl">
 
-  <div class="site-wrapper" >
+  <div class="site-wrapper">
     <div class="site-wrapper-inner">
       <div class="cover-container">
-          HELLO WORLD
+          <div class="pagetitle" ng-if="page='main'">
+              <h2 >iPermit</h2>
+              <h4 >Find only the building code relating to your property</h4>
+              <div class="input-group input-group-lg">
+                  <input type="text" class="form-control" placeholder="Enter your address" style="width: 300px !important">
+                  <button class="btn btn-lg btn-warning">Go!</button>
+              </div>
+          </div>
+          <div>
+              Location
+          </div>
+          <div >
+              {{address}}
+          </div> 
+          <div>
+              Building Code Properties: {{zone}}
+          </div>
+          <div ng-repeat="prop in zoneProperties | filter:zone" ng-if="page='searched'">
+              <div ng-repeat="(propName, propValue) in prop">
+                  {{propName}}: {{propValue}} <br />
+              </div>
+</div> 
       </div>
     </div>
   </div>
-
-
-
-
-<div>
-Location
-</div>
-<div >
-{{address}}
-</div> 
-
-
-
-<div>
-Building Code Properties: {{zone}}
-</div>
-
-<div ng-repeat="prop in zoneProperties | filter:zone" ng-if="searched">
-<div ng-repeat="(propName, propValue) in prop">
-
-{{propName}}: {{propValue}} <br />
-</div>
-</div> 
-
-
 
   <!-- build:js scripts/components.min.js -->
   <!-- bower:js -->
