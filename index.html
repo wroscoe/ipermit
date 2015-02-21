@@ -45,7 +45,7 @@
 
 <body ontouchstart ng-controller="MainCtrl">
 
-  <div class="site-wrapper">
+  <div class="site-wrapper" >
     <div class="site-wrapper-inner">
       <div class="cover-container">
           HELLO WORLD
@@ -53,13 +53,30 @@
     </div>
   </div>
 
+
+
+
 <div>
-Zone Properties
+Location
+</div>
+<div >
+{{address}}
+</div> 
+
+
+
+<div>
+Building Code Properties: {{zone}}
 </div>
 
-<div ng-repeat="prop in zoneProperties | filter:'RM-4'" ng-if="searched">
-{{prop['Permitted Density']}} <br />
+<div ng-repeat="prop in zoneProperties | filter:zone" ng-if="searched">
+<div ng-repeat="(propName, propValue) in prop">
+
+{{propName}}: {{propValue}} <br />
+</div>
 </div> 
+
+
 
   <!-- build:js scripts/components.min.js -->
   <!-- bower:js -->

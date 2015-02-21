@@ -16,6 +16,8 @@ angular.module('aih.IPermit')
         });
 
   $scope.searched=true;
+  $scope.address="672 Alcatraz Ave., Oakland, CA 94609";
+  $scope.zone='RM-4';
 
   })
 
