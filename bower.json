@@ -1,0 +1,28 @@
+{
+  "name": "iPermit",
+  "version": "0.1.0",
+  "description": "Yet another amazing AngularJS app",
+  "keywords": [
+    "angular"
+  ],
+  "homepage": "https://github.com/aih/i-permit",
+  "bugs": "https://github.com/aih/i-permit/issues",
+  "author": {
+    "name": "Ari Hershowitz",
+    "email": "",
+    "url": "https://github.com/aih"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/aih/i-permit.git"
+  },
+  "licenses": [
+    {
+      "type": "MIT"
+    }
+  ],
+  "dependencies": {
+    "bootstrap": "3.3.2",
+    "angular": "^1.4.0-beta.4"
+  }
+}
