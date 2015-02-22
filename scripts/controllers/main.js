@@ -5,6 +5,7 @@ angular.module('aih.IPermit')
   .controller('MainCtrl', function($scope, $http, $location, version) {
 
     $scope.page='main'; // has the search button been pressed
+    $scope.searched = false;
     $scope.address="672 Alcatraz Ave., Oakland, CA 94609";
     $scope.zone='RM-4';
 

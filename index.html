@@ -50,7 +50,7 @@
   <div class="site-wrapper">
     <div class="site-wrapper-inner">
       <div class="cover-container">
-          <div class="pagetitle" ng-if="page='main'">
+          <div class="pagetitle" >
               <h2 >iPermit</h2>
               <h4 >Find only the building code relating to your property</h4>
               <div class="input-group input-group-lg">
@@ -58,20 +58,22 @@
                   <button class="btn btn-lg btn-warning">Go!</button>
               </div>
           </div>
-          <div>
-              Location
-          </div>
-          <div >
-              {{address}}
-          </div> 
-          <div>
-              Building Code Properties: {{zone}}
-          </div>
-          <div ng-repeat="prop in zoneProperties | filter:zone" ng-if="page='searched'">
-              <div ng-repeat="(propName, propValue) in prop">
-                  {{propName}}: {{propValue}} <br />
+          <div class="resultsdiv">
+              <div>
+                  Location
               </div>
-</div> 
+              <div >
+                  {{address}}
+              </div>
+              <div>
+                  Building Code Properties: {{zone}}
+              </div>
+              <div ng-repeat="prop in zoneProperties | filter:zone" ng-if="searched">
+                  <div ng-repeat="(propName, propValue) in prop">
+                      {{propName}}: {{propValue}} <br />
+                  </div>
+              </div>
+          </div>
       </div>
        <div id="map" style="height: 180px;"></div>
     </div>
