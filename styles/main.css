@@ -2,15 +2,14 @@
     width:600px;
     height:200px;
     position: fixed;
-    top: 50%;
+    top: 10%;
     left: 50%;
-    margin-top: -100px;
     margin-left: -100px;
 }
 
 .resultsdiv{
     width:600px;
     max-height:200px;
-    margin-top: 400px;
+    margin-top: 20%;
     margin-left: 100px;
 }
