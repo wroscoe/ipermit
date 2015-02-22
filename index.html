@@ -52,10 +52,10 @@
               <h4 >Find only the building code relating to your property</h4>
               <div class="input-group input-group-lg">
                   <input type="text" class="form-control" placeholder="Enter your address" style="width: 300px !important">
-                  <button class="btn btn-lg btn-warning">Go!</button>
+                  <button class="btn btn-lg btn-warning" ng-click="gotoPage('searched')">Go!</button>
               </div>
           </div>
-          <div class="resultsdiv">
+          <div class="resultsdiv" ng-show="page=='searched'">
               <div>
                   Location
               </div>
@@ -65,7 +65,7 @@
               <div>
                   Building Code Properties: {{zone}}
               </div>
-              <div ng-repeat="prop in zoneProperties | filter:zone" ng-if="searched">
+              <div ng-repeat="prop in zoneProperties | filter:zone" >
                   <div ng-repeat="(propName, propValue) in prop">
                       {{propName}}: {{propValue}} <br />
                   </div>
