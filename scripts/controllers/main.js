@@ -4,9 +4,9 @@ angular.module('aih.IPermit')
 
   .controller('MainCtrl', function($scope, $http, $location, version) {
 
-    $scope.page='main'; // has the search button been pressed
+    $scope.state = {'page':'main'}; // has the search button been pressed
     $scope.gotoPage = function(page){
-        $scope.page = page;
+        $scope.state.page = page;
     }
     $scope.address="672 Alcatraz Ave., Oakland, CA 94609";
     $scope.zone='RM-4';

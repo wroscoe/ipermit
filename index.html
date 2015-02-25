@@ -14,7 +14,8 @@
 <![endif]-->
 
   <!-- Sets initial viewport load and disables zooming  -->
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
   <!-- Makes your prototype chrome-less once bookmarked to your phone's home screen -->
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -49,33 +50,41 @@
 
   <div class="site-wrapper">
     <div class="site-wrapper-inner">
-      <div class="cover-container">
-          <div class="pagetitle" >
-              <h2 >iPermit</h2>
-              <h4 >Find only the building code relating to your property</h4>
-              <div class="input-group input-group-lg">
-                  <input type="text" class="form-control" placeholder="Enter your address" style="width: 300px !important">
-                  <button class="btn btn-lg btn-warning" ng-click="gotoPage('searched')">Go!</button>
-              </div>
+
+
+      <div class="cover-container" ng-show="state.page">
+        <div class="pagetitle" >
+          <h2 >iPermit</h2>
+          <h4 >Find only the building code relating to your property</h4>
+          <div class="input-group input-group-lg">
+            <input type="text" class="form-control" placeholder="Enter your address" style="width: 300px !important">
+            <button class="btn btn-lg btn-warning" ng-click="gotoPage('searched')">Go!</button>
           </div>
-          <div class="resultsdiv" ng-show="page=='searched'">
-              <div>
-                  Location
-              </div>
-              <div >
-                  {{address}}
-              </div>
-              <div>
-                  Building Code Properties: {{zone}}
-              </div>
-              <div ng-repeat="prop in zoneProperties | filter:zone" >
-                  <div ng-repeat="(propName, propValue) in prop">
-                      {{propName}}: {{propValue}} <br />
-                  </div>
-              </div>
-          </div>
+        </div>
       </div>
-       <!-- <div id="map" style="height: 180px;"></div> -->
+
+      <div class="cover-container" ng-show="state.page=='searched'"   >
+        <div class="row" >
+          <div class="col-md-6">
+              Location
+          </div>
+          <div class="col-md-6" >
+              {{address}}
+          </div>
+          <div>
+              Building Code Properties: {{zone}}
+          </div>
+          <div ng-repeat="prop in zoneProperties | filter:zone" >
+              <div ng-repeat="(propName, propValue) in prop">
+                  {{propName}}: {{propValue}} <br />
+              </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="cover-container" ng-show="state.page"   >
+        <div id="map" style="height: 180px; width:100px"></div>
+      </div>
     </div>
   </div>
 
@@ -94,14 +103,16 @@
 
 <script src="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script>
 <script>
-  var map = L.map('map').setView([37.849885, -122.264751], 13);
 
-  L.tileLayer('http://{s}.tiles.mapbox.com/v3/wroscoe.l9ckbicd/{z}/{x}/{y}.png', {
-      attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://mapbox.com">Mapbox</a>',
-      maxZoom: 18
-  }).addTo(map);
 
-var marker = L.marker([51.5, -0.09]).addTo(map);
+// create a map in the "map" div, set the view to a given place and zoom
+var map = L.map('map').setView([51.505, -0.09], 13);
+
+// create a tile layer sourced from mapbox
+L.tileLayer('https://{s}.tiles.mapbox.com/v4/mapbox.streets/{z}/{x}/{y}.png?access_token=pk.eyJ1Ijoid3Jvc2NvZSIsImEiOiJvQ2E4MXVJIn0.FbUWHF6UCB3cpXmaUWOBaQ').addTo(map);
+
+setTimeout(function(){ map.invalidateSize(); }, 100);
+
 </script>
 
 </body>
