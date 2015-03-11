@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html ng-app="aih.IPermit">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>IPermit - Find Building Code Relating to Your Property</title>
+  <meta name="description" content="Find Building Code Relating to Your Property">
+
+<!--[if lt IE 9]>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/es5-shim/2.2.0/es5-shim.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7/html5shiv.min.js"></script>
+<![endif]-->
+
+  <!-- Sets initial viewport load and disables zooming  -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+  <!-- Makes your prototype chrome-less once bookmarked to your phone's home screen -->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <!-- Set a shorter title for iOS6 devices when saved to home screen -->
+  <meta name="apple-mobile-web-app-title" content="iPermit">
+
+  <!-- Properties for Google+ snippets -->
+  <meta property="og:title" content="iPermit">
+  <meta property="og:description" content="Demo: Find Building Regulations by Address">
+
+  <!-- Author of this application -->
+  <link rel="author" href="https://github.com/aih"> 
+  <!--link rel="icon" href="http://angularjs.org/favicon.ico" type="image/x-icon"-->
+  <!--link rel="shortcut icon" href="http://angularjs.org/favicon.ico" type="image/x-icon"-->
+
+  <!-- build:css styles/components.min.css -->
+  <!-- bower:css -->
+  <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
+  <!-- endbower -->
+  <!-- endbuild -->
+
+  <!-- build:css(.tmp) styles/main.min.css -->
+  <link rel="stylesheet" href="styles/main.css">
+  <!-- endbuild -->
+
+   <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css" />
+  
+  <style> 
+  #map {
+    height:420px;
+    width:600px;
+}
+.infoWindowContent {
+    font-size:  14px !important;
+    border-top: 1px solid #ccc;
+    padding-top: 10px;
+}
+h2 {
+    margin-bottom:0;
+    margin-top: 0;
+}
+</style>
+
+</head>
+
+<body ontouchstart>
+
+
+<div ng-controller="MapCtrl">
+    <div id="map"></div>
+    <div id="class" ng-repeat="marker in markers | orderBy : 'title'">
+         <a href="#" ng-click="openInfoWindow($event, marker)">{{marker.title}}</a>
+    </div>
+</div>
+
+  <script src="bower_components/jquery/dist/jquery.js"></script>
+  <script src="bower_components/angular/angular.js"></script>
+  <script src="http://maps.googleapis.com/maps/api/js?key=&sensor=false&extension=.js"></script>
+
+
+
+
+  <script src="scripts/app.js"></script>
+  <script src="scripts/controllers/main.js"></script>
+  <script src="scripts/controllers/maps.js"></script>
+
+</body>

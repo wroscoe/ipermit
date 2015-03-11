@@ -9,4 +9,3 @@ angular.module('aih.IPermit', [])
     $locationProvider.html5Mode(false);
 
   });
-
