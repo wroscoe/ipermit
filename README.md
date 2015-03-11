@@ -24,9 +24,13 @@ These is for people added to this repo. You can still contribute if you're not. 
 ### You can help
 We need help with the following...
 * Javascript function to Geoocode and address
-* UI to enter address
+* UI to enter address [see UX draft] (https://docs.google.com/presentation/d/1i2UpLjbvCQ2xssMd-n4suuWcyMrGDBKlYc6DF6hVgU8/edit)
 * UI to see mapped data of local data (points)
 * Define spreadsheet formats that can be uploaded to data.openoakland so that it can be published on this app. (we want this to be how you publish data). 
+* 
+
+
+
 
 
 
