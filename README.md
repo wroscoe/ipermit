@@ -17,7 +17,7 @@ This app is designed to provide the relevant local information around an address
 3. Create a pull request.
 
 ### See the live public site.
-1. Goto ```http://wroscoe.github.io/ipermit/```
+1. Goto [http://wroscoe.github.io/ipermit/](http://wroscoe.github.io/ipermit/)
 
 
 ### You can help
