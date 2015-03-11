@@ -5,11 +5,12 @@ This app is designed to provide the relevant local information around an address
 
 
 ### Get started developing
-1. Clone this repository. ``` git clone git@github.com:wroscoe/ipermit.git
-2. Go into the repository's directory ```cd ipermit```
-3. Checkout the github pages branch ```git checkout gh-pages```
-4. Start the server  ```python -m SimpleHTTPServer```
-5. See the server ```localhost:8000```
+1. Clone this repository: ``` git clone git@github.com:wroscoe/ipermit.git ```
+2. Go into the repository's directory: ```cd ipermit```
+3. Checkout the github pages branch: ```git checkout gh-pages```
+4. Start the server:  ```python -m SimpleHTTPServer```
+5. See the page. Open your browser and enter the url: ```localhost:8000```
+
 
 ### You can help
 We need help with the following...
@@ -17,4 +18,4 @@ We need help with the following...
 * UI to enter address
 * UI to see mapped data of local data (points)
 * Define formats of a spreadsheet (we want this to be how you publish data). 
-* 
+
