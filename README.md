@@ -12,6 +12,7 @@ This app is designed to provide the relevant local information around an address
 5. See the page. Open your browser and enter the url: ```localhost:8000```
 
 ### Make something.
+These is for people added to this repo. You can still contribute if you're not. Fork our branch and then create a pull request.
 1. Create a branch with your initials and the feacture ie.. ```git checkout -b wr/added_geocoding```
 2. Code your stuff and commit working fuctional bits ``` git commit -am "this is a message```
 3. Create a pull request.
@@ -25,7 +26,9 @@ We need help with the following...
 * Javascript function to Geoocode and address
 * UI to enter address
 * UI to see mapped data of local data (points)
-* Define formats of a spreadsheet (we want this to be how you publish data). 
+* Define spreadsheet formats that can be uploaded to data.openoakland so that it can be published on this app. (we want this to be how you publish data). 
+
+
 
 
 
